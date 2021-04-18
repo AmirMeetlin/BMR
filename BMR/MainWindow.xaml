@@ -1,0 +1,292 @@
+﻿<Window x:Class="BMR.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BMR"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.6*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock
+            FontSize="24"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Text="Калькулятор базового обмена веществ" 
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" 
+            Foreground="#FF454545"
+            />
+        <TextBlock
+            FontSize="16"
+            Grid.Column="0"
+            Grid.Row="1"
+            Text="Возраст:" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="20,0,0,0"
+            Foreground="#FF454545"
+            />
+        <TextBlock
+            FontSize="16"
+            Grid.Column="0"
+            Grid.Row="2"
+            Text="Пол:" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="20,0,0,0"
+            Foreground="#FF454545"
+            />
+        <TextBlock
+            FontSize="16"
+            Grid.Column="0"
+            Grid.Row="3"
+            Text="Вес:" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="20,0,0,0"
+            Foreground="#FF454545"
+            />
+        <TextBlock
+            FontSize="16"
+            Grid.Column="0"
+            Grid.Row="4"
+            Text="Рост:" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="20,0,0,0"
+            Foreground="#FF454545"
+            />
+        <TextBlock
+            FontSize="16"
+            Grid.Column="0"
+            Grid.Row="5"
+            Text="Уровень расхода энергии:" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="20,0,0,0"
+            Foreground="#FF454545"
+            />
+        <TextBlock
+            FontSize="16"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Grid.Row="6"
+            Text="Варианты рассчета" 
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="0,0,0,0"
+            Foreground="#FF454545"
+            />
+        <TextBlock
+            FontSize="16"
+            Grid.Column="0"
+            Grid.Row="7"
+            Text="Результат в:" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="20,0,0,0"
+            Foreground="#FF454545"
+            />
+        <TextBlock
+            FontSize="16"
+            Grid.Column="0"
+            Grid.Row="8"
+            Text="Формула расчета:" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="20,0,0,0"
+            Foreground="#FF454545"
+            />
+        <Button
+                x:Name="btnRes"
+                Content="Рассчитать значение"
+                FontSize="16" 
+                Grid.Column="0"
+                Grid.Row="9" 
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center"
+                Padding="15 5" 
+                BorderBrush="#FF454545" 
+                Foreground="#FF454545"
+                Background="{x:Null}"
+                BorderThickness="2" Click="btnRes_Click"
+                />
+        <TextBox
+            x:Name="boxAge"
+            Text="Лет"
+            FontSize="16"
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Left"
+            Margin="20,0,0,0"
+            Grid.Column="1"
+            Grid.Row="1"
+            Width="100"
+            BorderThickness="2" 
+            Foreground="#FF454545" 
+            GotFocus="boxText_GotFocus" 
+            LostFocus="boxText_LostFocus"
+            />
+        <StackPanel
+            Grid.Row="2"
+            Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0">
+            <RadioButton 
+                GroupName="rbGender" 
+                x:Name="rbGenderM"
+                Content="Мужской" 
+                IsChecked="True" 
+                />
+            <RadioButton 
+                GroupName="rbGender" 
+                Content="Женский"
+                x:Name="rbGenderF"
+                Margin="0,5,0,0"
+                />
+        </StackPanel>
+        <StackPanel
+            Grid.Row="3"
+            Grid.Column="1" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center" 
+            Margin="20,0,0,0">
+            <TextBox
+            x:Name="boxWeight"
+            FontSize="16"
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Left"
+            Margin="0"
+            Grid.Column="1"
+            Grid.Row="1"
+            Width="100"
+            BorderThickness="2" 
+            Foreground="#FF454545"
+            />
+            <RadioButton 
+                GroupName="rbWeight" 
+                x:Name="rbWeightFunt"
+                Content="Фунты" 
+                IsChecked="True" />
+            <RadioButton 
+                GroupName="rbWeight" 
+                x:Name="rbWeightKg"
+                Content="Килограммы" 
+                Margin="0,5,0,0" />
+        </StackPanel>
+        <TextBox
+            x:Name="boxHeight"
+            FontSize="16"
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Left"
+            Margin="20,0,0,0"
+            Grid.Column="1"
+            Grid.Row="4"
+            Width="100"
+            BorderThickness="2" 
+            Foreground="#FF454545"
+            Text="Сантиметров" 
+            GotFocus="boxText_GotFocus"
+            LostFocus="boxText_LostFocus"
+            />
+        <ComboBox
+            Grid.Column="1"
+            Grid.Row="5" 
+            VerticalAlignment="Center"
+            Margin="10,0"
+            x:Name="cbEnergy"
+            >
+            <TextBlock
+            FontSize="14"
+            Text="Основной уровень обмена веществ" 
+            Foreground="#FF454545"
+            />
+            <TextBlock
+            FontSize="14"
+            Text="Минимальные нагрузки" 
+            Foreground="#FF454545"
+            />
+            <TextBlock
+            FontSize="14"
+            Text="Тренировки 3 раза в неделю" 
+            Foreground="#FF454545"
+            />
+            <TextBlock
+            FontSize="14"
+            Text="Тренировки 5 раз в неделю" 
+            Foreground="#FF454545"
+            />
+            <TextBlock
+            FontSize="14" 
+            Text="Интенсивные тренировки 5 раз в неделю"
+            Foreground="#FF454545"
+            />
+            <TextBlock
+            FontSize="14"
+            Text="Ежедневные тренировки" 
+            Foreground="#FF454545"
+            />
+            <TextBlock
+            FontSize="14"
+            Text="Ежедневные интенсивные тренировки или занятия 2 раза в день" 
+            Foreground="#FF454545"
+            />
+            <TextBlock
+            FontSize="14"
+            Text="Тяжелая физическая работа или интенсивные тренировки 2 раза в день" 
+            Foreground="#FF454545"
+            />
+        </ComboBox>
+        <StackPanel
+            Grid.Row="7"
+            Grid.Column="1" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="20,0,0,0">
+            <RadioButton 
+                GroupName="rbVar" 
+                x:Name="rbVarKal"
+                Content="Калориях" 
+                IsChecked="True" 
+                />
+            <RadioButton 
+                GroupName="rbVar" 
+                x:Name="rbVarDj"
+                Content="Килоджоулях"
+                Margin="0,5,0,0"
+                />
+        </StackPanel>
+        <StackPanel
+            Grid.Row="8"
+            Grid.Column="1" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="20,0,0,0">
+            <RadioButton 
+                GroupName="rbForm" 
+                x:Name="rbFormMafDj"
+                Content="Маффина-Джеора" 
+                IsChecked="True" 
+                />
+            <RadioButton 
+                GroupName="rbForm" 
+                x:Name="rbFormHarBen"
+                Content="Харриса-Бенедикта"
+                Margin="0,5,0,0"
+                />
+        </StackPanel>
+    </Grid>
+</Window>
